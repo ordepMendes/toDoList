@@ -30,10 +30,29 @@ button{
   cursor: pointer;
   opacity: 0.8;
   transition: 0.3s;
+  margin-right: 10px;
 }
 
 button:hover {
   opacity: 1;
+}
+
+
+.todo-list{
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+}
+
+.todo{
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .complete{
@@ -54,4 +73,20 @@ input, select{
   border: 1px solid #ddd;
   outline: none;
   width: 100%;
+}
+
+.filter, .search {
+  border-bottom:  1px solid #555;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.filterOptions{
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.filterOptions div{
+  flex: 1 1 0;
 }

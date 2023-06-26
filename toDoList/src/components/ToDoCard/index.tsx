@@ -1,20 +1,23 @@
 
 type toDoCardType = {
-    text: string,
-    category: string,
-  
+  id: number
+  text: string,
+  category: string,
+  isCompleted: boolean
+  remove: (id: number) => void,
+  completed: (id: number) => void
 }
 
-function toDoCard({ text, category}: toDoCardType){
+function toDoCard({ text, category, remove, completed, id, isCompleted}: toDoCardType){
     return(
         <div className="todo" >
-        <div className="content">
+        <div className="content" style={{textDecoration: isCompleted ? 'line-through' : ''}}>
           <p>{text}</p>
           <p className="category">({category})</p>
         </div>
         <div>
-          <button className="complete">Finalizar</button>
-          <button className="remove">x</button>
+          <button className="complete" onClick={() => completed(id)}>Finalizar</button>
+        <button className="remove" onClick={() => remove(id)}>x</button>
         </div>
       </div>
     )
